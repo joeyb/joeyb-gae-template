@@ -1,0 +1,50 @@
+Google App Engine Project Template
+
+Created by Joey Bratton <http://www.joeyb.org>
+
+Licensed under the MIT License
+
+Google includes a very simple project template with the GAE
+software, but it's really basic and I found myself rewriting a
+lot of the same basic code at the start of any GAE project, so
+I decided to make my own little project template.  If you're
+familiar with GAE then the layout should be pretty self explanatory.
+
+externals/
+   Any third party modules should be placed in this directory.  This
+   folder has been added to the python path, so you can easily import
+   code from here.
+
+handlers/
+   I split up my handlers in separate files using a philosophy
+   similar to Django's idea of applications.  For example, a blog.py
+   file may contain a PostViewHandler, DayViewHandler, MonthViewHandler,
+   etc.
+
+models/
+
+static/
+   All static files (css, js, images) should go in here.
+
+templates/
+   The main template layout is base.html and I tend to create a subfolder
+   for each "application" and stores its views in that folder.
+
+Install Instructions:
+
+1. Edit app.yaml and change the application name to the correct
+   name for your application
+
+2. Edit config.py and change the default settings
+
+3. Run like any other GAE app
+
+Credits:
+
+Several ideas on the code structure/layout for this application
+were borrowed from Bloog <http://bloog.billkatz.com/>, which is
+a GAE-based blog.
+
+This application includes BlueprintCSS since I use it in a lot
+of my projects.  If you want to write your own CSS (I don't) then
+feel free to remove it.

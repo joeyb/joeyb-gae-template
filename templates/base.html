@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>{% block title %}{% endblock %} | {{ settings.title }}</title>
+    <link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection">
+    <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">    
+    <!--[if lt IE 8]><link rel="stylesheet" href="/static/css/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+    <link rel="stylesheet" href="/static/css/style.css" type="text/css" media="screen, projection">
+</head>
+<body>
+    <div class="container">
+        <div id="header" class="span-24 last">
+            <a href="/" class="logo"">{{ settings.title }}</a>
+        </div>
+        <div id="content" class="span-24 last">
+            {% block content %}{% endblock %}
+        </div>
+        <div id="footer" class="span-24 last">
+            &copy; {{ settings.author }} 2009 | <a href="/" title="Home">Home</a>
+        </div>
+    </div>
+    {% if settings.google_analytics %}
+        <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        </script>
+        <script type="text/javascript">
+            try{
+                var pageTracker = _gat._getTracker("{{ settings.google_analytics }}");
+                pageTracker._trackPageview();
+            } catch(err) {}
+        </script>
+    {% endif %}
+</body>
+</html>
