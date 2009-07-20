@@ -22,6 +22,10 @@ handlers/
    etc.
 
 models/
+   I generally tend to put each model and any associated helper functions
+   together inside their own separate files inside this directory. The
+   template does not actually include any models, just a placeholder
+   directory.
 
 static/
    All static files (css, js, images) should go in here.
